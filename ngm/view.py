@@ -15,7 +15,7 @@ import numpy as np
 import requests
 
 test_graph = Graph(
-    "http://127.0.0.1:7474",
+    "http://118.89.233.180:7474",
     username="neo4j",
     password="77777"
 )
@@ -25,6 +25,8 @@ def near(request):
     return render(request,'near.html')
 def path(request):
     return render(request,'path.html')
+def totalview(request):
+    return render(request,'index.html')
 
 def find_near(request):
     a = request.GET['pname']
