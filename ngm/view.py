@@ -144,16 +144,26 @@ def find_path(request):
     #return render(request,'path.html')
     fperson = request.GET['fname']
     tperson = request.GET['tname']
-    data = test_graph.run("Match(p1:Person{name:{fp}}),(p2:Person{name:{tp}}),p=allshortestpaths((p1)-[*..10]->(p2)) return p limit 30",fp=fperson,tp=tperson)
+    data = test_graph.run("Match(p1:Person{name:{fp}}),(p2:Person{name:{tp}}),p=allshortestpaths((p1)-[*..10]-(p2)) return p limit 30",fp=fperson,tp=tperson)
+    cnt = 0
+    datap = []
+    for datai in data:
+	cnt+= 1
+	datap.append(datai['p'])
 
+    sdis = datap[0].relationships()
+    if(len(datap) < 10):
+	mydata = test_graph.run("MATCH (fromNodes:Person) where fromNodes.name='"+fperson+"' MATCH (toNodes:Person) where toNodes.name='"+tperson+"' CALL apoc.algo.allSimplePaths(fromNodes, toNodes, 'know',"+str(len(datap[0].relationships())+1)+") yield path as path RETURN path limit "+str(10-cnt))
+	for p in mydata:
+	    datap.append(p['path']) 
     nodes_total = []
     rels_total = []
     #all_nodes_total = []
     paths = []
     cnt = 0
-    for datai in data:
-        nodes = datai['p'].nodes()
-        rels = datai['p'].relationships()
+    for p in datap:
+        nodes = p.nodes()
+        rels = p.relationships()
         # print rel
         # print nodes
         # print rels
