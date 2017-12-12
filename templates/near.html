@@ -100,7 +100,7 @@
             <div class="lazyDiv" style="float:right">
                 <img id="myimg" class="homeLazyImg" style="height: 48px; width: 48px; display: inline;" data-original="http://183.174.228.2/pic/pic.aspx?c=1&amp;q=%E4%BF%9E%E6%AD%A3%E5%A3%B0&amp;market=zh-CN" title="俞正声" alt="俞正声" src="http://183.174.228.2/pic/pic.aspx?c=1&q=%E4%B9%A0%E8%BF%91%E5%B9%B3&market=zh-CN" data-bd-imgshare-binded="1">
             </div>
-            <div style="font-size:2em;float:right" id="namediv">俞正声</div>
+            <div style="font-size:2em;float:right" id="namediv">习近平</div>
         </div>
         <div class=" col-md-8 text-right">
             <div style="text-align:right">
@@ -265,12 +265,18 @@
                         that.button("reset");
                         return ;
                     }
+                    var first = 0
                     for(var i in ret){
                         if(ret[i]["end.name"] == name) continue;
                         node = {id:ret[i]["end.name"],label:ret[i]["end.name"]};
                         edge = {id:ret[i]['n.name']+"&"+ret[i]['end.name'],from:ret[i]['n.name'],to:ret[i]["end.name"],value:ret[i]["r.val"],title:ret[i]["r.val"]}
                         if(ret[i]['n.name'] == name){
                             nodes.push(node)
+                            if(first==0){
+                                $("#numHaosouIndex").html(ret[i]['end.name']);
+                            }
+                            first = 1
+
                             str += "<tr class='mytr'><td class='tname'>"+ ret[i]['end.name']+"</td>"+"<td>"+ret[i]["r.val"]+"</td>"+"<td><a target='_blank' href='"+
                                 "http://playbigdata.com/fss3/search2.aspx?q="+encodeURIComponent(ret[i]['end.name'])+"&t='>链接</a>"+"</td>"+"</tr>"
                         }
