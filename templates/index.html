@@ -368,7 +368,8 @@
                 //"bProcessing": true
                 columns : [{data : "id"},{data:"value"}],
             });
-            $(".top_table").DataTable({
+            $(".top_table").each(function(){
+                $(this).DataTable({
                 "paging": true,
                 "iDisplayLength":12, //默认每页数量
                 "bPaginate": true, //翻页功能
@@ -402,6 +403,7 @@
                 //"bPaginate": true,
                 //"bProcessing": true
                 columns : [{data : "id"},{data:"value"}],
+                })
             })
             $.get("http://118.89.233.180:1241/gettotalview",{}, function(ret){
                 console.log(ret);
