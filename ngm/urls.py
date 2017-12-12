@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^find_near',view.find_near),
     url(r'^getEdgeinfo',view.getEdgeinfo),
     url(r'^totalview$',view.totalview),
+    url(r'^gettotalview$', view.gettotalview),
     url(r'^$',view.near)
 ]

@@ -6,6 +6,8 @@ from django.http import HttpResponse
 
 from py2neo import Graph,Node,Relationship,database
 
+from django.db import connections
+
 from django.core   import serializers
 
 import json
@@ -21,18 +23,81 @@ test_graph = Graph(
 )
 def f2(a,b):
     return b['val']-a['val']
+
+def dictfetchall(cursor):
+	desc = cursor.description
+	return [
+	dict(zip([col[0] for col in desc], row))
+    	for row in cursor.fetchall()
+    	]
+
 def near(request):
     return render(request,'near.html')
 def path(request):
     return render(request,'path.html')
 def totalview(request):
     return render(request,'index.html')
+def gettotalview(request):
+    cursor = connections['default'].cursor()
+    cursor.execute("select * from influence order by sval desc limit 50 ")
+    influence = dictfetchall(cursor)
+    cursor.close()
+
+    cursor = connections['default'].cursor()
+    cursor.execute("select * from center order by sval desc limit 50 ")
+    center = dictfetchall(cursor)
+    cursor.close()
+
+    cursor = connections['default'].cursor()
+    cursor.execute("select * from claster order by sval desc limit 50 ")
+    claster = dictfetchall(cursor)
+    cursor.close()
+
+    response = HttpResponse(json.dumps([influence,center,claster]), content_type="application/json")
+    response["Access-Control-Allow-Origin"] = "*"
+    response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
+    response["Access-Control-Max-Age"] = "1000"
+    response["Access-Control-Allow-Headers"] = "*"
+    return response
+
+
 
 def find_near(request):
     a = request.GET['pname']
 
     maxn = request.GET['maxnear']
 
+    cursor = connections['default'].cursor()
+    cursor.execute("select sval from influence where sname = %s ",(a,))
+    raw = dictfetchall(cursor)
+    influence = -1
+    if len(raw)>=1:
+        influence = raw[0]['sval']
+    cursor.close()
+
+    cursor = connections['default'].cursor()
+    cursor.execute("select sval from center where sname = %s ", (a,))
+    raw = dictfetchall(cursor)
+    center = -1
+    if len(raw) >= 1:
+        center = raw[0]['sval']
+    cursor.close()
+
+    cursor = connections['default'].cursor()
+    cursor.execute("select sval from claster where sname = %s ", (a,))
+    raw = dictfetchall(cursor)
+    claster = -1
+    if len(raw) >= 1:
+        claster = raw[0]['sval']
+    cursor.close()
+
+    cursor = connections['default'].cursor()
+    cursor.execute("select sval from num where sname = %s ", (a,))
+    raw = dictfetchall(cursor)
+    num = -1
+    if len(raw) >= 1:
+        num = raw[0]['sval']
+    cursor.close()
 
     data = test_graph.data("Match (n:Person{name: {str}})-[r:know]-(end:Person) return r.val,n.name,end.name order by r.val desc limit " +maxn ,str=a)
     #
@@ -54,7 +119,7 @@ def find_near(request):
                 break
     #
     if(request.GET['mr'] == "1"):
-        response = HttpResponse(json.dumps(data), content_type="application/json")
+        response = HttpResponse(json.dumps([data,influence,claster,center,num]), content_type="application/json")
         response["Access-Control-Allow-Origin"] = "*"
         response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
         response["Access-Control-Max-Age"] = "1000"
