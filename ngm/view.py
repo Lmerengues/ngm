@@ -173,7 +173,7 @@ def find_near(request):
                         # cnt += 1
     # print cnt
 
-    response = HttpResponse(json.dumps(data),content_type="application/json")
+    response = HttpResponse(json.dumps([data,num,influence,center,claster]),content_type="application/json")
     response["Access-Control-Allow-Origin"] = "*"
     response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
     response["Access-Control-Max-Age"] = "1000"

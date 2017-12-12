@@ -253,6 +253,11 @@
                 var that = $(this)
                 $.get("http://118.89.233.180:1241/find_near",{'pname':name,'maxnear':maxn,'mr':mr}, function(ret){
                     console.log(ret)
+                    $("#numTotal").val(ret[1])
+                    $("#numPos").val(ret[2])
+                    $("#numNeg").val(ret[3])
+                    $("#probOpinion").val(ret[4])
+                    ret = ret[0]
                     str = "<h3><span id='resulttitle'></span></h3><table class='table table-striped table-hover ' style='width:100% ' id='mytable'><thead><th>姓名</th><th>亲密度</th><th>时事探针</th></thead><tbody>";
                     if(ret.length==0){
                         alert("没有找到这个人的信息，输一个我知道的人吧！");
@@ -435,6 +440,7 @@
                     // $("#btn-commit").trigger("click");
                     $.get("http://118.89.233.180:1241/find_near",{'pname':click_node_id,'maxnear':maxn,'mr':mr}, function(ret){
                     console.log(ret);
+                    ret = ret[0]
                     for(var i in ret){
                         exist1 = 0
                         for(var j in nodes){
