@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="888351e8-05dd-4bef-ba81-09619cd5a5c6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ngm/settings.py" afterPath="$PROJECT_DIR$/ngm/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +19,7 @@
       <file leaf-file-name="view.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ngm/view.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="796">
+            <state relative-caret-position="690">
               <caret line="65" column="28" lean-forward="false" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
               <folding>
                 <element signature="e#62#97#0" expanded="true" />
@@ -36,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6105">
-              <caret line="407" column="14" lean-forward="false" selection-start-line="407" selection-start-column="14" selection-end-line="407" selection-end-column="14" />
+            <state relative-caret-position="473">
+              <caret line="426" column="26" lean-forward="false" selection-start-line="426" selection-start-column="26" selection-end-line="426" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -100,7 +100,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ngm/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="104">
@@ -154,8 +154,8 @@
         <option value="$PROJECT_DIR$/templates/near.html" />
         <option value="$PROJECT_DIR$/ngm/urls.py" />
         <option value="$PROJECT_DIR$/ngm/view.py" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/ngm/settings.py" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
       </list>
     </option>
   </component>
@@ -426,28 +426,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ngm/view.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="796">
-          <caret line="65" column="28" lean-forward="false" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
-          <folding>
-            <element signature="e#62#97#0" expanded="true" />
-            <marker date="1513098008000" expanded="true" signature="875:899" ph="select sval influence" />
-            <marker date="1513098008000" expanded="true" signature="875:926" ph="select * fro... influence" />
-            <marker date="1513098008000" expanded="true" signature="1052:1100" ph="select * fro... center" />
-            <marker date="1513098008000" expanded="true" signature="1223:1272" ph="select * fro... claster" />
-            <marker date="1513098008000" expanded="true" signature="1826:1869" ph="select * fro... influence" />
-            <marker date="1513098008000" expanded="true" signature="2068:2108" ph="select * fro... center" />
-            <marker date="1513098008000" expanded="true" signature="2304:2345" ph="select * fro... claster" />
-            <marker date="1513098008000" expanded="true" signature="2543:2580" ph="select sval num" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ngm/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="26" column="35" lean-forward="false" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ngm/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="79" column="45" lean-forward="false" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -494,18 +484,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/ngm/view.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6105">
-          <caret line="407" column="14" lean-forward="false" selection-start-line="407" selection-start-column="14" selection-end-line="407" selection-end-column="14" />
-          <folding />
+        <state relative-caret-position="690">
+          <caret line="65" column="28" lean-forward="false" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
+          <folding>
+            <element signature="e#62#97#0" expanded="true" />
+            <marker date="1513098008000" expanded="true" signature="875:899" ph="select sval influence" />
+            <marker date="1513098008000" expanded="true" signature="875:926" ph="select * fro... influence" />
+            <marker date="1513098008000" expanded="true" signature="1052:1100" ph="select * fro... center" />
+            <marker date="1513098008000" expanded="true" signature="1223:1272" ph="select * fro... claster" />
+            <marker date="1513098008000" expanded="true" signature="1826:1869" ph="select * fro... influence" />
+            <marker date="1513098008000" expanded="true" signature="2068:2108" ph="select * fro... center" />
+            <marker date="1513098008000" expanded="true" signature="2304:2345" ph="select * fro... claster" />
+            <marker date="1513098008000" expanded="true" signature="2543:2580" ph="select sval num" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ngm/settings.py">
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="79" column="45" lean-forward="false" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
+        <state relative-caret-position="473">
+          <caret line="426" column="26" lean-forward="false" selection-start-line="426" selection-start-column="26" selection-end-line="426" selection-end-column="26" />
           <folding />
         </state>
       </provider>

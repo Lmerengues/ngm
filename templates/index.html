@@ -405,6 +405,26 @@
             })
             $.get("http://118.89.233.180:1241/gettotalview",{}, function(ret){
                 console.log(ret);
+                str = " <thead>" + "<th>姓名</th>" +"<th>影响力</th>" +"</thead>" +"<tbody>"
+                for(var i=0;i<ret[0].length;i++){
+                    str += "<tr>" +"<td>"+ret[0][i]['sname']+"</td>" +"<td>"+ret[0][i]['val']+"</td>" +" </tr>"
+                }
+                str +=  "</tbody>"
+                $("#table1").html(str);
+
+                str = " <thead>" + "<th>姓名</th>" +"<th>中介中心性</th>" +"</thead>" +"<tbody>"
+                for(var i=0;i<ret[1].length;i++){
+                    str += "<tr>" +"<td>"+ret[1][i]['sname']+"</td>" +"<td>"+ret[1][i]['val']+"</td>" +" </tr>"
+                }
+                str +=  "</tbody>"
+                $("#table2").html(str);
+
+                str = " <thead>" + "<th>姓名</th>" +"<th>聚集系数</th>" +"</thead>" +"<tbody>"
+                for(var i=0;i<ret[2].length;i++){
+                    str += "<tr>" +"<td>"+ret[1][i]['sname']+"</td>" +"<td>"+ret[2][i]['val']+"</td>" +" </tr>"
+                }
+                str +=  "</tbody>"
+                $("#table3").html(str);
             })
 
         });
