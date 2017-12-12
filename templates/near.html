@@ -259,7 +259,7 @@
                     $("#numNeg").html(ret[3])
                     $("#probOpinion").html(ret[4].toFixed(6))
                     ret = ret[0]
-                    str = "<h3><span id='resulttitle'></span></h3><table class='table table-striped table-hover ' style='width:100% ' id='mytable'><thead><th>姓名</th><th>亲密度</th><th>时事探针</th></thead><tbody>";
+                    str = "<h3><span id='resulttitle'></span></h3><table class='table table-striped table-hover ' style='width:100% ' id='mytable'><thead><th>姓名</th><th>亲密度</th></thead><tbody>";
                     if(ret.length==0){
                         alert("没有找到这个人的信息，输一个我知道的人吧！");
                         $("#numHaosouIndex").html("?");
@@ -278,8 +278,7 @@
                             }
                             first = 1
 
-                            str += "<tr class='mytr'><td class='tname'>"+ ret[i]['end.name']+"</td>"+"<td>"+ret[i]["r.val"]+"</td>"+"<td><a target='_blank' href='"+
-                                "http://playbigdata.com/fss3/search2.aspx?q="+encodeURIComponent(ret[i]['end.name'])+"&t='>链接</a>"+"</td>"+"</tr>"
+                            str += "<tr class='mytr'><td class='tname'>"+ ret[i]['end.name']+"</td>"+"<td>"+ret[i]["r.val"]+"</td>"+"</tr>"
                         }
                         edges.push(edge)
 
@@ -329,7 +328,7 @@
                         //"serverSide" : true,//服务器端进行分页处理的意思
                         //"bPaginate": true,
                         //"bProcessing": true
-                        columns : [{data : "id"},{data:"value"},{data:"link"}],
+                        columns : [{data : "id"},{data:"value"}],
                     });
                     $("#mytable tbody").on("mouseover","tr",function()
                     {//给tr或者td添加click事件
