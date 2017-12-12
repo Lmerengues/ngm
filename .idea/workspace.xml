@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="888351e8-05dd-4bef-ba81-09619cd5a5c6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ngm/settings.py" afterPath="$PROJECT_DIR$/ngm/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ngm/urls.py" afterPath="$PROJECT_DIR$/ngm/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ngm/view.py" afterPath="$PROJECT_DIR$/ngm/view.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,7 +20,7 @@
         <entry file="file://$PROJECT_DIR$/ngm/view.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="796">
-              <caret line="65" column="28" lean-forward="true" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
+              <caret line="65" column="28" lean-forward="false" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
               <folding>
                 <element signature="e#62#97#0" expanded="true" />
                 <marker date="1513098008000" expanded="true" signature="875:899" ph="select sval influence" />
@@ -40,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="6105">
-              <caret line="407" column="14" lean-forward="true" selection-start-line="407" selection-start-column="14" selection-end-line="407" selection-end-column="14" />
+              <caret line="407" column="14" lean-forward="false" selection-start-line="407" selection-start-column="14" selection-end-line="407" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -64,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/templates/near.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="235">
-              <caret line="253" column="114" lean-forward="true" selection-start-line="253" selection-start-column="15" selection-end-line="253" selection-end-column="114" />
+              <caret line="253" column="114" lean-forward="false" selection-start-line="253" selection-start-column="15" selection-end-line="253" selection-end-column="114" />
               <folding>
                 <marker date="1513085992000" expanded="false" signature="3218:3234" ph="..." />
                 <marker date="1513085992000" expanded="false" signature="3421:3431" ph="..." />
@@ -104,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ngm/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="83" column="25" lean-forward="false" selection-start-line="83" selection-start-column="25" selection-end-line="83" selection-end-column="25" />
+            <state relative-caret-position="104">
+              <caret line="79" column="45" lean-forward="false" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -118,7 +114,7 @@
         <entry file="file://$PROJECT_DIR$/templates/path.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="720">
-              <caret line="48" column="37" lean-forward="true" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+              <caret line="48" column="37" lean-forward="false" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -156,10 +152,10 @@
       <list>
         <option value="$PROJECT_DIR$/templates/path.html" />
         <option value="$PROJECT_DIR$/templates/near.html" />
-        <option value="$PROJECT_DIR$/ngm/settings.py" />
         <option value="$PROJECT_DIR$/ngm/urls.py" />
         <option value="$PROJECT_DIR$/ngm/view.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/ngm/settings.py" />
       </list>
     </option>
   </component>
@@ -425,15 +421,7 @@
     <entry file="file://$PROJECT_DIR$/templates/path.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
-          <caret line="48" column="37" lean-forward="true" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ngm/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="83" column="25" lean-forward="false" selection-start-line="83" selection-start-column="25" selection-end-line="83" selection-end-column="25" />
+          <caret line="48" column="37" lean-forward="false" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -441,7 +429,7 @@
     <entry file="file://$PROJECT_DIR$/ngm/view.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="796">
-          <caret line="65" column="28" lean-forward="true" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
+          <caret line="65" column="28" lean-forward="false" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
           <folding>
             <element signature="e#62#97#0" expanded="true" />
             <marker date="1513098008000" expanded="true" signature="875:899" ph="select sval influence" />
@@ -467,7 +455,7 @@
     <entry file="file://$PROJECT_DIR$/templates/near.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
-          <caret line="253" column="114" lean-forward="true" selection-start-line="253" selection-start-column="15" selection-end-line="253" selection-end-column="114" />
+          <caret line="253" column="114" lean-forward="false" selection-start-line="253" selection-start-column="15" selection-end-line="253" selection-end-column="114" />
           <folding>
             <marker date="1513085992000" expanded="false" signature="3218:3234" ph="..." />
             <marker date="1513085992000" expanded="false" signature="3421:3431" ph="..." />
@@ -509,7 +497,15 @@
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6105">
-          <caret line="407" column="14" lean-forward="true" selection-start-line="407" selection-start-column="14" selection-end-line="407" selection-end-column="14" />
+          <caret line="407" column="14" lean-forward="false" selection-start-line="407" selection-start-column="14" selection-end-line="407" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ngm/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="79" column="45" lean-forward="false" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
           <folding />
         </state>
       </provider>

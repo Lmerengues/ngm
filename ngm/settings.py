@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'ngm.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',  # 或者使用 mysql.connector.django
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ngm',
         'USER': 'root',
         'PASSWORD': '233180txy',
