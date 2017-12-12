@@ -391,7 +391,7 @@
                 }
                 str +=  "</tbody>"
                 $("#table3").html(str);
-            })
+
             $("#table1").DataTable({
                 "paging": true,
                 "iDisplayLength":12, //默认每页数量
@@ -496,6 +496,7 @@
                 //"bPaginate": true,
                 //"bProcessing": true
                 columns : [{data : "id"},{data:"value"}],
+            })
             })
 
         });
