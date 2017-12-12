@@ -98,7 +98,7 @@
     <div class="row" id="basicInfoDiv">
         <div class="col-md-4 text-right">
             <div class="lazyDiv" style="float:right">
-                <img class="homeLazyImg" style="height: 48px; width: 48px; display: inline;" data-original="http://183.174.228.2/pic/pic.aspx?c=1&amp;q=%E4%BF%9E%E6%AD%A3%E5%A3%B0&amp;market=zh-CN" title="俞正声" alt="俞正声" src="http://183.174.228.2/pic/pic.aspx?c=1&amp;q=%E4%BF%9E%E6%AD%A3%E5%A3%B0&amp;market=zh-CN" data-bd-imgshare-binded="1">
+                <img id="myimg" class="homeLazyImg" style="height: 48px; width: 48px; display: inline;" data-original="http://183.174.228.2/pic/pic.aspx?c=1&amp;q=%E4%BF%9E%E6%AD%A3%E5%A3%B0&amp;market=zh-CN" title="俞正声" alt="俞正声" src="http://183.174.228.2/pic/pic.aspx?c=1&amp;q=%E4%BF%9E%E6%AD%A3%E5%A3%B0&amp;market=zh-CN" data-bd-imgshare-binded="1">
             </div>
             <div style="font-size:2em;float:right" id="namediv">俞正声</div>
         </div>
@@ -257,6 +257,7 @@
                     $("#numPos").html(Math.floor( ret[2]*1000000 ))
                     $("#numNeg").html(ret[3])
                     $("#probOpinion").html(ret[4].toFixed(6))
+                    $("#myimg").attr('src',"http://183.174.228.2/pic/pic.aspx?c=1&amp;q="+name+"&amp;market=zh-CN")
                     ret = ret[0]
                     str = "<h3><span id='resulttitle'></span></h3><table class='table table-striped table-hover ' style='width:100% ' id='mytable'><thead><th>姓名</th><th>亲密度</th><th>时事探针</th></thead><tbody>";
                     if(ret.length==0){
