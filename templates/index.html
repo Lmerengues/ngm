@@ -475,12 +475,12 @@
             })
             $.get("http://118.89.233.180:1241/gettotalview",{}, function(ret){
                 console.log(ret);
-                str = " <h3><span id=\"resulttitle\">影响力排行</span></h3>" +" <table class='table table-striped table-hover ' style='width:100% ' class='top_table' id=\"table1\"><thead>" + "<th>姓名</th>" +"<th>影响力</th>" +"</thead>" +"<tbody>"
+                str = " <thead>" + "<th>姓名</th>" +"<th>影响力</th>" +"</thead>" +"<tbody>"
                 for(var i=0;i<ret[0].length;i++){
                     str += "<tr>" +"<td>"+ret[0][i]['sname']+"</td>" +"<td>"+ret[0][i]['sval']+"</td>" +" </tr>"
                 }
-                str +=  "</tbody></table>"
-                $("#result1").html(str);
+                str +=  "</tbody>"
+                $("#table1").html(str);
 
                 str = " <thead>" + "<th>姓名</th>" +"<th>中介中心性</th>" +"</thead>" +"<tbody>"
                 for(var i=0;i<ret[1].length;i++){
