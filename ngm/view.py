@@ -218,9 +218,22 @@ def find_path(request):
         cnt+= 1
         datap.append(datai['p'])
 
+    if len(datap)==0:
+        response = HttpResponse(json.dumps(datap), content_type="application/json")
+        response["Access-Control-Allow-Origin"] = "*"
+        response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
+        response["Access-Control-Max-Age"] = "1000"
+        response["Access-Control-Allow-Headers"] = "*"
+        return response
+
     sdis = datap[0].relationships()
     if(len(datap) < 10):
-        mydata = test_graph.run("MATCH (fromNodes:Person) where fromNodes.name='"+fperson+"' MATCH (toNodes:Person) where toNodes.name='"+tperson+"' CALL apoc.algo.allSimplePaths(fromNodes, toNodes, 'know',"+str(len(datap[0].relationships())+1)+") yield path RETURN path,reduce(a=1, r in rels(path) | a+r.val) as orders ORDER BY orders limit "+str(10-len(datap)))
+        step = 1
+        result_len = 0
+        while(result_len<10):
+            mydata = test_graph.run("MATCH (fromNodes:Person) where fromNodes.name='"+fperson+"' MATCH (toNodes:Person) where toNodes.name='"+tperson+"' CALL apoc.algo.allSimplePaths(fromNodes, toNodes, 'know',"+str(step)+") yield path RETURN path,reduce(a=1, r in rels(path) | a+r.val) as orders ORDER BY length(path),orders desc limit 10")
+            result_len = len(mydata)
+            step += 1
         for p in mydata:
             datap.append(p['path'])
     nodes_total = []
@@ -250,31 +263,7 @@ def find_path(request):
                 this_path_values.append(rels[i]['val'])
         paths.append({'path': this_path, 'val': np.sum(this_path_values)})
     paths.sort(cmp=f2)
-    if len(paths)==0:
-        data = test_graph.run(
-            "Match(p1:Person{name:{fp}}),(p2:Person{name:{tp}}),p=allshortestpaths((p1)-[*..10]-(p2)) return p limit 30", fp=fperson, tp=tperson)
-        for datai in data:
-            nodes = datai['p'].nodes()
-            rels = datai['p'].relationships()
-            # print rel
-            # print nodes
-            # print rels
-            this_path = []
-            this_path_val = 0
-            this_path_values = []
-            for i in range(0, len(nodes)):
-                # all_nodes_total.append(nodes[i]['name'])
-                if nodes[i]['name'] not in nodes_total:
-                    nodes_total.append(nodes[i]['name'])
-                if i < len(nodes) - 1:
-                    rels_total.append(
-                        {"start_node": nodes[i]['name'], "end_node": nodes[i + 1]['name'], "val": rels[i]['val']})
-                    this_path.append(
-                        {"start_node": nodes[i]['name'], "end_node": nodes[i + 1]['name'], "val": rels[i]['val']})
-                    this_path_val += rels[i]['val']
-                    this_path_values.append(rels[i]['val'])
-            paths.append({'path': this_path, 'val': np.sum(this_path_values)})
-        paths.sort(cmp=f2)
+
     #双保险
     response = HttpResponse(json.dumps([nodes_total,rels_total,paths]), content_type="application/json")
     response["Access-Control-Allow-Origin"] = "*"
