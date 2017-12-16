@@ -217,15 +217,15 @@
                 $.get("http://118.89.233.180:1241/find_path",{'fname':fname,'tname':tname}, function(ret){
                     console.log(ret);
                     str = "<h3><span id='resulttitle'></span></h3><table class='table table-striped' style='width:100%' id='mytable'><thead><th>路径</th><th>pid</th></thead><tbody>";
-                    t_nodes = ret[0];
-                    t_rels = ret[1];
-                    t_paths = ret[2];
-                     $("#resulttitle").html("in")
-                    if(t_paths.length==0){
+                    if(!ret || ret.length==0){
                         alert("没找到这条联系哟，是不是输错名字了？");
                         that.button("reset");
                         return ;
                     }
+                    t_nodes = ret[0];
+                    t_rels = ret[1];
+                    t_paths = ret[2];
+                     $("#resulttitle").html("in")
                     for(var i in t_nodes){
                         if(fname == t_nodes[i]){
                             nodes.push({id:t_nodes[i],label:t_nodes[i],color:{background:"#ff9966"}})
