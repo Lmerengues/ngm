@@ -214,9 +214,10 @@ def find_path(request):
     data = test_graph.run("Match(p1:Person{name:{fp}}),(p2:Person{name:{tp}}),p=allshortestpaths((p1)-[*..10]-(p2)) return p limit 30",fp=fperson,tp=tperson)
     cnt = 0
     datap = []
+    shortest = []
     for datai in data:
         cnt+= 1
-        #datap.append(datai['p'])
+        shortest.append(datai['p'])
 
     if cnt==0:
         response = HttpResponse(json.dumps(datap), content_type="application/json")
@@ -226,9 +227,11 @@ def find_path(request):
         response["Access-Control-Allow-Headers"] = "*"
         return response
 
-    #sdis = datap[0].relationships()
+    initstep = 1
+    if len(shortest)>0:
+        initstep = len(shortest[0].relationships())+1
     if(cnt > 0):
-        step = 3
+        step = initstep
         result_len = 0
         while result_len < 10:
             path_store = []
