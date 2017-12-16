@@ -218,7 +218,7 @@ def find_path(request):
         cnt+= 1
         #datap.append(datai['p'])
 
-    if len(datap)==0:
+    if cnt==0:
         response = HttpResponse(json.dumps(datap), content_type="application/json")
         response["Access-Control-Allow-Origin"] = "*"
         response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
@@ -226,8 +226,8 @@ def find_path(request):
         response["Access-Control-Allow-Headers"] = "*"
         return response
 
-    sdis = datap[0].relationships()
-    if(len(datap) < 10):
+    #sdis = datap[0].relationships()
+    if(cnt < 10):
         step = 3
         result_len = 0
         while result_len < 10:
