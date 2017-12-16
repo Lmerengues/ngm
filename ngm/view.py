@@ -235,7 +235,6 @@ def find_path(request):
             result_len = 0
             for item in mydata:
                 result_len+=1
-            result_len = len(mydata)
             step += 1
         for p in mydata:
             datap.append(p['path'])
