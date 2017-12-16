@@ -228,7 +228,7 @@ def find_path(request):
 
     sdis = datap[0].relationships()
     if(len(datap) < 10):
-        step = 1
+        step = 3
         result_len = 0
         while(result_len<10):
             mydata = test_graph.run("MATCH (fromNodes:Person) where fromNodes.name='"+fperson+"' MATCH (toNodes:Person) where toNodes.name='"+tperson+"' CALL apoc.algo.allSimplePaths(fromNodes, toNodes, 'know',"+str(step)+") yield path RETURN path,reduce(a=1, r in rels(path) | a+r.val) as orders ORDER BY length(path),orders desc limit 10")
