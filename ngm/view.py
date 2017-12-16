@@ -216,7 +216,7 @@ def find_path(request):
     datap = []
     for datai in data:
         cnt+= 1
-        datap.append(datai['p'])
+        #datap.append(datai['p'])
 
     if len(datap)==0:
         response = HttpResponse(json.dumps(datap), content_type="application/json")
