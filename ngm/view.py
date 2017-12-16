@@ -232,6 +232,9 @@ def find_path(request):
         result_len = 0
         while(result_len<10):
             mydata = test_graph.run("MATCH (fromNodes:Person) where fromNodes.name='"+fperson+"' MATCH (toNodes:Person) where toNodes.name='"+tperson+"' CALL apoc.algo.allSimplePaths(fromNodes, toNodes, 'know',"+str(step)+") yield path RETURN path,reduce(a=1, r in rels(path) | a+r.val) as orders ORDER BY length(path),orders desc limit 10")
+            result_len = 0
+            for item in mydata:
+                result_len+=1
             result_len = len(mydata)
             step += 1
         for p in mydata:
