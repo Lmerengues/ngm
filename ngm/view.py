@@ -227,7 +227,7 @@ def find_path(request):
         return response
 
     #sdis = datap[0].relationships()
-    if(cnt < 10):
+    if(cnt > 0):
         step = 3
         result_len = 0
         while result_len < 10:
@@ -268,7 +268,7 @@ def find_path(request):
                 this_path_val += rels[i]['val']
                 this_path_values.append(rels[i]['val'])
         paths.append({'path': this_path, 'val': np.sum(this_path_values)})
-    paths.sort(cmp=f2)
+    #paths.sort(cmp=f2)
 
     #双保险
     response = HttpResponse(json.dumps([nodes_total,rels_total,paths]), content_type="application/json")
